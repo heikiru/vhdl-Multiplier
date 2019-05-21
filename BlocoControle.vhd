@@ -7,6 +7,7 @@ entity BlocoControle is
 		pronto: out std_logic;
 		cargaA, cargaB, cargaP: out std_logic;
 		resetP: out std_logic;
+		resetA: out std_logic;
 		sel: out std_logic;
 		inicio: in std_logic;
 		resetFSM: in std_logic;
@@ -38,11 +39,13 @@ begin
 					cargaA <= '1';
 					cargaB <= '1';
 					resetP <= '1';
+					resetA <= '1';
 					PE <= S2;
 			when S2 =>
 					pronto <= '0';
 					cargaA <= '0';
 					cargaB <= '0';
+					resetA <= '0';
 					resetP <= '0';
 				if Az = '0' and Bz = '0' then
 					PE <= S3;

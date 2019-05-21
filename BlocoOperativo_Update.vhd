@@ -1,16 +1,16 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 USE ieee.std_logic_vector;
-entity BlocoOperativo_Update is
+entity BlocoOperativo is
 	port(
 		clk, entA, entB: in std_logic;
 		cargaA, cargaB, cargaP, resetP, sel:
 		in std_logic;
 		Az, Bz, Pout: out std_logic
 	);
-end BlocoOperativo_Update;
+end BlocoOperativo;
 
-architecture arch_BO of BlocoOperativo_Update is
+architecture arch_BO of BlocoOperativo is
 signal saidaMuxP, saidaMuxA, saidaMuxSelPA, saidaMuxSelB1,
 saidaRegP, saidaRegA, saidaRegB, selInit, outSumSub: std_logic;
 

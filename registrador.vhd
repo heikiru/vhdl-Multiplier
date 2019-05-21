@@ -18,6 +18,7 @@ begin
     	if (rising_edge(clk)) then
     		if(carga = '1') then
 				Y <= X;
+			end if;
     	end if;
     end process;
 end arch_registrador;

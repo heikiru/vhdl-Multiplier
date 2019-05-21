@@ -12,6 +12,6 @@ end Mux2para1;
 
 architecture arch_Mux2para1 of Mux2para1 is
 begin
-		S <= A when sel = '0';
-		S <= B when sel = '1';
+		S <= A when sel = '0'
+		else B when sel = '1';
 end arch_Mux2para1;
