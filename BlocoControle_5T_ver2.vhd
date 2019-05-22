@@ -9,6 +9,7 @@ ENTITY BlocoControle_5T_ver2 IS
     resetA, resetB, resetP, resetCont: in std_logic; -- resetP can be taken later, since we are using a Mux
     srRegP, srRegA: in std_logic; -- Shift Right inputs to P and A
     Az, Bz, ContZ: in std_logic; -- verifies if A, B and Cont are zero in certain situations
+    A_0: in std_logic; -- Verifies if the bit zero in A is equal to one or not
     pronto: out std_logic
   );
     
@@ -20,7 +21,6 @@ END BlocoControle_5T_ver2;
 ARCHITECTURE arch_BC_5T_ver2 IS
 TYPE state IS (S0, S1, S2, S3, S4, S5, S6);
 SIGNAL EA, PE: state;
-SIGNAL A_0: std_logic;
 
 BEGIN
   PROCESS(clk, EA)
