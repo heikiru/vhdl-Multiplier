@@ -7,6 +7,7 @@ ENTITY BlocoControle_5T_ver2 IS
     clk, init, resetFSM: in std_logic;
     cargaA, cargaB, cargaP, cargaCont: out std_logic;
     resetP: out std_logic; -- resetP can be taken later, since we are using a Mux
+    muxP, muxCont, muxSum: out std_logic;
     srRegP, srRegA: out std_logic; -- Shift Right inputs to P and A
     Az, Bz, ContZ: in std_logic; -- verifies if A, B and Cont are zero in certain situations
     A_0: in std_logic; -- Verifies if the bit zero in A is equal to one or not
@@ -42,13 +43,17 @@ BEGIN
           cargaA <= '1';
           cargaB <= '1';
           cargaCont <= '1';
-          resetP <= '1';
+          muxP <= '1';
+          muxCont <= '1';
+          muxSum <= '1';
           PE <= S2;
         WHEN S2 =>
             cargaA <= '0';
             cargaB <= '0';
             cargaCont <= '0';
-            resetP <= '0';
+            muxP <= '0';
+            muxCont <= '0';
+            muxSum <= '1';
             IF Az = '1' OR Bz = '1' THEN
               PE <= S6;
             ELSE 
