@@ -6,7 +6,7 @@ ENTITY BlocoControle_5T_ver2 IS
   PORT (
     clk, init, resetFSM: in std_logic;
     cargaA, cargaB, cargaP, cargaCont: in std_logic;
-    resetA, resetB, resetP, resetCont: in std_logic; -- resetP can be taken later, since we are using a Mux
+    resetP: in std_logic; -- resetP can be taken later, since we are using a Mux
     srRegP, srRegA: in std_logic; -- Shift Right inputs to P and A
     Az, Bz, ContZ: in std_logic; -- verifies if A, B and Cont are zero in certain situations
     A_0: in std_logic; -- Verifies if the bit zero in A is equal to one or not
