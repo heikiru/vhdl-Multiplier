@@ -5,9 +5,9 @@ USE ieee.std_logic_1164.all;
 ENTITY BlocoControle_5T_ver2 IS
   PORT (
     clk, init, resetFSM: in std_logic;
-    cargaA, cargaB, cargaP, cargaCont: in std_logic;
-    resetP: in std_logic; -- resetP can be taken later, since we are using a Mux
-    srRegP, srRegA: in std_logic; -- Shift Right inputs to P and A
+    cargaA, cargaB, cargaP, cargaCont: out std_logic;
+    resetP: out std_logic; -- resetP can be taken later, since we are using a Mux
+    srRegP, srRegA: out std_logic; -- Shift Right inputs to P and A
     Az, Bz, ContZ: in std_logic; -- verifies if A, B and Cont are zero in certain situations
     A_0: in std_logic; -- Verifies if the bit zero in A is equal to one or not
     pronto: out std_logic
