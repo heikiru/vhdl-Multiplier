@@ -11,6 +11,8 @@ end IgualZero;
 
 architecture arch_IgualZero of IgualZero is
 begin
-    S <= '1' when X = (X'range => '0')
+	
+		
+	 S <= '1' when X = (X'range => '0')
 	 else '0';
-end arch_IgualZero;
+	end arch_IgualZero;
