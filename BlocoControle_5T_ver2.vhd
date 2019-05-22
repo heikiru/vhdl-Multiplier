@@ -53,6 +53,7 @@ BEGIN
               PE <= S6;
             ELSE 
               PE <= S3;
+            END IF;
         WHEN S3 =>
             IF ContZ = '1' THEN
               PE <= S6;
@@ -61,6 +62,8 @@ BEGIN
                 PE <= S4;
               ELSE
                 PE <= S5;
+              END IF;
+            END IF;
         WHEN S4 =>
             cargaP <= '1';
             PE <= S5;
@@ -73,3 +76,10 @@ BEGIN
         WHEN S6 =>
             pronto <= '1';
             PE <= S0;
+        END CASE;
+    ELSE
+        PE <= S0;
+    END IF;
+  END PROCESS;
+        
+END arch_BC_5T_ver2;
